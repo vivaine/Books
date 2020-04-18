@@ -52,12 +52,19 @@ public class AuthorController {
 
 	@GetMapping("/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
-		return new ModelAndView("authors/edit");
+		Author author = authorService.findAuthor(id);
+		ModelAndView modelAndView = new ModelAndView("authors/form");
+		modelAndView.addObject("author", author);
+
+		return modelAndView;
 	}
 
 	@GetMapping("/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
-		return new ModelAndView("authors/delete");
+
+		authorService.deleteAuthor(id);
+
+		return new ModelAndView("redirect:/authors/list");
 	}
 
 }
