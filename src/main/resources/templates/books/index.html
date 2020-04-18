@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  	layout:decorate="layout">
+<head>
+	<meta charset="UTF-8" />
+	<title>Livros</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" />
+	<link rel="stylesheet" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.css}" />	
+</head>
+
+<body>
+
+	<a href="#" th:href="@{/books/new}">Novo</a>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NOME</th>
+			<th>AUTOR</th>
+			<th>PÁGINAS</th>
+		</tr>
+		<tr th:each="book : ${books}">
+			<td th:text="${book.id}">ID do livro</td>
+			<td th:text="${book?.name}">nome do livro</td>
+			<td th:text="${book?.author?.name}">nome do autor</td>
+			<td th:text="${book?.numberPages}">quantidade de páginas</td>
+			<td><a href="#" th:href="@{'/books/edit/'+${book.id}}">Alterar</a></td>
+			<td><a href="#" th:href="@{'/books/delete/'+${book.id}}">Excluir</a></td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}" ></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}" ></script>
+		
+</body>
+</html>

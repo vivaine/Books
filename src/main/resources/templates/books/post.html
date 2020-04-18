@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  	layout:decorate="layout">
+<head>
+<meta charset="UTF-8" />
+<title>Livros</title>
+</head>
+<body>
+<form method="post" action="/books/post">
+    Nome: <input type="text" name="nome">
+    Quantidade Páginas: <input type="text" name="quantidadePaginas">
+    <input type="submit">
+</form>
+
+</body>
+</html>
