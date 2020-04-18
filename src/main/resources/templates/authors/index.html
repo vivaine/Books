@@ -7,7 +7,7 @@
 	<title>Autores</title>
 </head>
 <body>
-	<a href="#">Novo</a>
+	<a href="#" th:href="@{/authors/new}">Novo</a>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -16,8 +16,8 @@
 		<tr th:each="author : ${authors}">
 			<td th:text="${author.id}">ID do autor</td>
 			<td th:text="${author.name}">nome do autor</td>
-			<td><a href="#">Alterar</a></td>
-			<td><a href="#">Excluir</a></td>
+			<td><a href="#" th:href="@{'/authors/edit/'+${author.id}}">Alterar</a></td>
+			<td><a href="#" th:href="@{'/authors/delete/'+${author.id}}">Excluir</a></td>
 		</tr>
 	</table>
 </body>
