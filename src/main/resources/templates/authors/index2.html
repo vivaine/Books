@@ -22,3 +22,64 @@
 	</table>
 </body>
 </html>
+
+
+	<div class="container">
+		<div class="col-md-12" style="margin:40px">
+			<div class="col-md-9"></div>
+			<div class="col-md-1">
+				<h1><a href="#" th:href="@{/books/list}">
+					<span class="glyphicon glyphicon glyphicon-book" aria-hidden="true"></span></a>
+				</h1>
+			</div>
+			<div class="col-md-1">
+				<h1><a href="#" th:href="@{/authors/list}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+		 		</h1>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="panel panel-info" style="margin-left:100px; margin-right:100px;">
+				<div class="panel-heading">Autores
+				</div>
+				<div class="panel-body">
+          			<div class="row">
+            			<div class="col-md-12">
+            				<h2><a href="#" th:href="@{/authors/new}">
+            						<span class="glyphicon glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            					</a>
+            				</h2>
+            			</div>
+      				</div>
+					<div class="row">
+            			<table class="table">
+              				<tr>
+			                	<th class="col-md-1">ID</th>
+                				<th class="col-md-6">NOME</th>
+                				<th class="col-md-2"></th>
+                				<th  class="col-md-2"></th>
+              				</tr>
+              				<tr th:each="author : ${authors}">
+	                			<td th:text="${author.id}"> id do Autor</td>
+    	            			<td th:text="${author.name}"> nome do Autor</td>
+                				<td><a a href="#" th:href="@{'/authors/edit/'+${author.id}}">  
+                  						<button type="button" class="btn btn-warning">
+                  							<span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>Alterar
+                  						</button>
+                  					</a>
+                  				</td>
+                				<td><a a href="#" th:href="@{'/authors/delete/'+${author.id}}"> 
+                  						<button type="button" class="btn btn-danger">
+                  							<span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>Excluir
+                  						</button>
+                  					</a>
+                  				</td>
+             	 			</tr>
+            			</table>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+ 	</div>	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}" ></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}" ></script>
