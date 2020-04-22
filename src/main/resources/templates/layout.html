@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<meta charset="UTF-8" />
+	<title>Biblioteca</title>
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" />
+    <link rel="stylesheet" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.css}" />
+    
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    
+</head>
+<body>
+
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" 
+				            data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
+				            aria-controls="navbar">
+					<span class="sr-only">Home</span>
+					<span class="icon-bar">Autores</span>
+					<span class="icon-bar">Livros</span>
+				  </button>
+				  <a class="navbar-brand" href="#">Biblioteca</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+				  <ul class="nav navbar-nav navbar-right">
+	
+					<li class="active"><a th:href="@{/}">Home</a></li>
+					<li><a href="#" th:href="@{/authors/list}">Autores</a></li>
+					<li><a href="#" th:href="@{/books/list}">Livros</a></li>
+	
+				  </ul>
+				</div>
+			</div>
+		</nav>
+		
+		<h1 layout:fragment="header"></h1>
+   		<div layout:fragment="content">
+   			
+   		</div>
+	</div>
+	
+<!--  JQuery -->
+<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>
+<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}" ></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}" ></script>	
+	
+</body>
+</html>

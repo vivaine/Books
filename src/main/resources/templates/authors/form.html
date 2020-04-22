@@ -5,26 +5,28 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Autores</title>
-	<!-- Bootstrap -->
-	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
-	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" />
-	<link rel="stylesheet" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.css}" />
-
 </head>
+
 <body>
-<form method="post" action="#" th:action="@{/authors/post}" th:object="${author}">
-    <input type="hidden" th:field="*{id}">
-    
-    Nome: <input type="text" th:field="*{name}"><br>
-    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span> <br><br>
-    <input type="submit">
-</form>
 
+	<nav layout:fragment="header" aria-label="breadcrumb" role="navigation">
+	</nav>
 
-	<!--  JQuery -->
-	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>
-	<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}" ></script>
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}" ></script>
+	<div layout:fragment="content" class="container">
+	
+		<form method="post" action="#" th:action="@{/authors/post}" th:object="${author}">
+		
+				<div class="col-md-12" style="margin:15px"></div>
+		
+		    	<input type="hidden" th:field="*{id}">
+		    	Nome: <input type="text" th:field="*{name}"><br>
+		    	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span> <br><br>
+		    	<input type="submit">
+		
+		
+		</form>
+
+	</div>
 
 </body>
 </html>

@@ -1,7 +1,9 @@
 body {
-  padding-top: 50px;
+  margin: 60px;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+
+/* Barra de navegação */
+header, .navbar {
+   background-color: #353D41;
 }
