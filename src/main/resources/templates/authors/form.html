@@ -16,16 +16,30 @@
 	
 		<form method="post" action="#" th:action="@{/authors/post}" th:object="${author}">
 		
-				<div class="col-md-12" style="margin:15px"></div>
-		
-		    	<input type="hidden" th:field="*{id}">
-		    	Nome: <input type="text" th:field="*{name}"><br>
-		    	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span> <br><br>
-		    	<input type="submit">
-		
-		
+			<br>
+			<br>
+			<br>
+			
+			<div class="panel panel-default" style="margin-left:70px; margin-right:70px;">			
+			
+				<div class="row">
+					<br>
+					<div class="col-md-1"></div>
+					<div class="col-md-1">
+		    			<input type="hidden" th:field="*{id}">
+		    			Nome: 
+					</div>
+					<div class="col-md-10">
+					    <input type="text" th:field="*{name}" style="width:60%"><br>
+						<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span>
+						<br>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<input type="submit" class="btn btn-main btn-xl text-uppercase" style="padding: 10px 20px">
+			</div>		
 		</form>
-
 	</div>
 
 </body>

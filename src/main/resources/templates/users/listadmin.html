@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>	Lista Admin</h1>
+	<h2>	Acesso Liberado </h2>
+	<div>
+		<ul>
+			<li><a th:href="@{/users/list}" href="#"> Lista Basica </a></li>
+			<li><a th:href="@{/users/listadmin}" href="#"> Lista Admin </a></li>
+			<li><a th:href="@{/users/logout}" href="#"> Logout </a></li>
+		</ul>
+	</div>
+	<div>
+
+		<table>
+			<tr>
+				<td>Username</td>
+				<td>Password</td>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.username}">Username</td>
+				<td th:text="${user.password}">Password</td>
+			</tr>
+
+		</table>
+
+	</div>
+</body>
+</html>

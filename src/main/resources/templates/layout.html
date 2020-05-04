@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+   	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 	<meta charset="UTF-8" />
 	<title>Biblioteca</title>
@@ -20,37 +20,41 @@
     
 </head>
 <body>
-
-	<div>
-		<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
+<header>
+  	<div class="container" id="nav-container">
+	
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
 			<div class="container">
 				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" 
-				            data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
-				            aria-controls="navbar">
-					<span class="sr-only">Home</span>
-					<span class="icon-bar">Autores</span>
-					<span class="icon-bar">Livros</span>
-				  </button>
-				  <a class="navbar-brand" href="#">Biblioteca</a>
+			  		<button type="button" class="navbar-toggle collapsed" 
+			            data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
+			            aria-controls="navbar">
+						<span class="sr-only">Home</span>
+						<span class="icon-bar">Autores</span>
+						<span class="icon-bar">Livros</span>
+				  	</button>
+			  		<a class="navbar-brand" href="#">Biblioteca</a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
-				  <ul class="nav navbar-nav navbar-right">
-	
-					<li class="active"><a th:href="@{/}">Home</a></li>
-					<li><a href="#" th:href="@{/authors/list}">Autores</a></li>
-					<li><a href="#" th:href="@{/books/list}">Livros</a></li>
-	
-				  </ul>
+			  		<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a th:href="@{/}">Home</a></li>
+						<li><a href="#" th:href="@{/authors/list}">Autores</a></li>
+						<li><a href="#" th:href="@{/books/list}">Livros</a></li>
+				  	</ul>
 				</div>
 			</div>
 		</nav>
-		
-		<h1 layout:fragment="header"></h1>
-   		<div layout:fragment="content">
-   			
-   		</div>
-	</div>
+  	
+  	</div>
+  </header>
+  <main>
+	  <div class="container" id="fundo">
+	  		<br><br>
+			<h1 layout:fragment="header"></h1>
+	   		<div layout:fragment="content"></div>
+	  </div>
+  </main>
+	
 	
 <!--  JQuery -->
 <script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>

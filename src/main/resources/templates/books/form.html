@@ -5,33 +5,69 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Livros</title>
-	<!-- Bootstrap -->
-	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
-	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" />
-	<link rel="stylesheet" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.css}" />
-
 </head>
+
 <body>
-<form method="post" action="#" th:action="@{/books/post}" th:object="${book}">
-    <input type="hidden" th:field="*{id}">
-    
-    Nome: <input type="text" th:field="*{name}"><br>
-    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span> <br><br>
-    Quantidade Páginas: <input type="text" th:field="*{numberPages}">
-    <span th:if="${#fields.hasErrors('numberPages')}" th:errors="*{numberPages}">Error</span> <br><br>
-    Autor: 
-    	<select th:field="*{author}">
-    		<option value="">Selecione o autor:</option>
-    		<option th:each="author : ${authorsList}" th:value="${author.id}" th:text="${author.name} " selected="selected"></option>
-    	 </select><br>
-    <input type="submit">
-</form>
 
+	<nav layout:fragment="header" aria-label="breadcrumb" role="navigation">
+	</nav>
 
-	<!--  JQuery -->
-	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}" ></script>
-	<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}" ></script>
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}" ></script>
+	<div layout:fragment="content" class="container">
+
+		<form method="post" action="#" th:action="@{/books/post}" th:object="${book}">
+		
+			<br>
+			<br>
+			<br>
+		    <div class="panel panel-default" style="margin-left:70px; margin-right:70px;">
+		    
+		    			    	
+		    		<div class="row">
+		    			<br>
+		    			<div class="col-md-1"></div>
+			    		<div class="col-md-2">
+					    	<input type="hidden" th:field="*{id}">
+				    		Nome: 
+				    		<br><br>
+			    		</div>
+			    		<div class="col-md-9">
+			    			<input type="text" th:field="*{name}" style="width:60%"><br>
+			    			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span> 
+			    		</div>
+		    		</div>
+		    		
+		    		<div class="row">
+				    	<div class="col-md-1"></div>
+				    	<div class="col-md-2">
+					    	Qtde Páginas: 
+				    	</div>
+				    	<div class="col-md-9">
+				    		<input type="text" th:field="*{numberPages}">
+				    		<span th:if="${#fields.hasErrors('numberPages')}" th:errors="*{numberPages}">Error</span> <br><br>
+				    	</div>
+				    </div>
+				    
+				    <div class="row">
+						<div class="col-md-1"></div>		    
+						<div class="col-md-2">
+			    			Autor: 
+		    			</div>
+		    			<div class="col-md-9">
+			    			<select th:field="*{author}" style="width:40%">
+			    				<option value="">Selecione o autor:</option>
+			    				<option th:each="author : ${authorsList}" th:value="${author.id}" th:text="${author.name} " selected="selected"></option>
+			    			</select>
+		    			</div>
+		    		</div>
+    				<br>		    		
+		    </div>
+
+    	    <div class="text-center">
+   	    		<input type="submit" class="btn main-btn btn-xl text-uppercase" style="padding: 10px 20px">
+    		</div>		    
+		</form>
+
+	</div>
 
 </body>
 </html>

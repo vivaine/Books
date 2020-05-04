@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+    <h1>Lista Basica</h1>
+    <h2>Acesso Liberado <span sec:authentication="name"></span></h2>
+    <div>
+   	 <ul>
+   		 <li sec:authorize="isAnonymous()"><a th:href="@{/users/login}" href="#"> Login </a></li>
+   		 <li sec:authorize="hasAuthority('ROLE_BASIC')"><a th:href="@{/users/list}" href="#"> Lista Basica </a></li>
+   		 <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="@{/users/listadmin}" href="#"> Lista Admin </a></li>
+   		 <li><a th:href="@{/users/logout}" href="#"> Logout </a></li>
+   	 </ul>
+    </div>
+</body>
+</html>
