@@ -9,12 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-import jdk.jfr.Name;
-
 @Entity
-@Name("EVALUATIONS")
+@Table(name = "EVALUATIONS")
 public class Evaluation {
 
 	@Id

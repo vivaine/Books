@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Registro</title>
 </head>
 <body>
 
-	<form id="userForm" th:action="@{/users/registration}" th:object="${userForm}" action="#" method="post">
-		<input type="text" th:field="*{username}"/><span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Nome Error</span><br/>
-		<input type="text" th:field="*{password}"/><span  th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Nome Error</span><br/>
-		<input type="submit" name="login" value="login" />
-	</form>
+	<nav layout:fragment="header" aria-label="breadcrumb" role="navigation">
+	</nav>
+	
+	<div layout:fragment="content" class="container">
+	
+		<form id="userForm" th:action="@{/users/registration}" th:object="${userForm}" action="#" method="post">
+			<br><br>
+			<br><br>
+			<br><br>
+		    <div class="panel panel-default" style="margin-left:25%; margin-right:25%;">
 
+				<div class="row">
+					<br><br>
+	    			<div class="col-md-3"></div>
+		    		<div class="col-md-1">
+				    	Nome: 
+			    		<br><br>
+		    		</div>
+		    		<div class="col-md-8">					
+						<input type="text" th:field="*{username}"/>
+						<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Nome Error</span><br/>
+					</div>				
+				</div>
+				
+				<div class="row">
+					<br>
+	    			<div class="col-md-3"></div>
+		    		<div class="col-md-1">
+				    	Senha: 
+			    		<br><br>
+		    		</div>
+		    		<div class="col-md-8">					
+						<input type="text" th:field="*{password}"/>
+						<span  th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Nome Error</span><br/>
+						<br><br>
+					</div>
+				</div>
+
+			</div>
+			<div class="text-center">
+				<input type="submit" class="btn main-btn btn-xl text-uppercase" style="padding: 10px 20px" name="login" value="Registrar" />
+			</div>
+	
+		</form>
+	</div>
 </body>
 </html>

@@ -18,16 +18,20 @@
 			<br>
 			<br>
 			<br>
-		    <div class="panel panel-default" style="margin-left:70px; margin-right:70px;">
+			<br>
+			<br>
+			<br>
+			<br>
+		    <div class="panel panel-default" style="margin-left:25%; margin-right:25%;">
 
 				<div class="row">
-					<br>
-	    			<div class="col-md-1"></div>
+					<br><br>
+	    			<div class="col-md-3"></div>
 		    		<div class="col-md-1">
 				    	Nome: 
 			    		<br><br>
 		    		</div>
-		    		<div class="col-md-10">					
+		    		<div class="col-md-8">					
 						<input type="text" th:field="*{username}"/>
 						<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Nome Error</span><br/>
 					</div>				
@@ -35,14 +39,15 @@
 				
 				<div class="row">
 					<br>
-	    			<div class="col-md-1"></div>
+	    			<div class="col-md-3"></div>
 		    		<div class="col-md-1">
 				    	Senha: 
 			    		<br><br>
 		    		</div>
-		    		<div class="col-md-10">					
+		    		<div class="col-md-8">					
 						<input type="text" th:field="*{password}"/>
 						<span  th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Nome Error</span><br/>
+						<br><br>
 					</div>
 				</div>
 

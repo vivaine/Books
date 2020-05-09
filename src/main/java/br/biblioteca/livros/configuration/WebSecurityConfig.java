@@ -34,11 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.headers().frameOptions().disable();
 
-		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET, "/user/registration").permitAll()
-				.antMatchers(HttpMethod.POST, "/user/registration").permitAll()
-				.antMatchers(HttpMethod.GET, "/user/list").hasRole("BASIC")
-				.antMatchers(HttpMethod.GET, "/user/listadmin").hasRole("ADMIN").and().formLogin()
-				.loginPage("/user/login").permitAll().and().logout().permitAll();
+		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET, "/users/registration").permitAll()
+				.antMatchers("/", "/books/**").hasRole("BASIC").antMatchers("/", "/authors/**").hasRole("BASIC")
+				.antMatchers(HttpMethod.POST, "/users/registration").permitAll()
+				.antMatchers(HttpMethod.GET, "/users/list").hasRole("BASIC")
+				.antMatchers(HttpMethod.GET, "/users/listadmin").hasRole("ADMIN").and().formLogin()
+				.loginPage("/users/login").permitAll().and().logout().permitAll();
 	}
 
 	@Autowired

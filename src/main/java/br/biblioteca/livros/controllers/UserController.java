@@ -54,7 +54,7 @@ public class UserController {
 
 		securityService.login(userForm.getUsername(), userForm.getPassword());
 
-		return new ModelAndView("redirect:/users/list");
+		return new ModelAndView("redirect:/");
 	}
 
 	@GetMapping("/list")
@@ -89,7 +89,7 @@ public class UserController {
 
 		try {
 			securityService.login(userForm.getUsername(), password);
-			return new ModelAndView("redirect:/users/list");
+			return new ModelAndView("redirect:/");
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/users/login");
 		}

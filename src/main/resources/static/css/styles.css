@@ -5,11 +5,29 @@ body {
   height: 100%;
 }
 
+li a {
+	color: aqua;
+}
+
+li p {
+	color: white;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.navbar-header a {
+	color: aqua;
+}
+
+footer a {
+	color: aqua;
+}
+
 .navbar {
    background-color: #353D41;
    font-size: 125%;
-   padding-top: 10px;
-   padding-bottom: 10px;   	
+   padding-top: 5px;
+   padding-bottom: 5px;   	
 }
 
 .fixed-top {
@@ -18,5 +36,18 @@ body {
     right: 0;
     left: 0;
     z-index: 1030;
+}
+
+.footer {
+  	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #353D41;
+	color: white;
+	text-align: center;  
+	font-size: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;	
 }
 

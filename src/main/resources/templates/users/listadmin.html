@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  	layout:decorate="layout">
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Usuários</title>
 </head>
 <body>
-	<h1>	Lista Admin</h1>
-	<h2>	Acesso Liberado </h2>
-	<div>
-		<ul>
-			<li><a th:href="@{/users/list}" href="#"> Lista Basica </a></li>
-			<li><a th:href="@{/users/listadmin}" href="#"> Lista Admin </a></li>
-			<li><a th:href="@{/users/logout}" href="#"> Logout </a></li>
-		</ul>
+	
+	<h1 layout:fragment="header">
+	</h1>
+	
+	<div layout:fragment="content" class="container">
+	    <br><br><br><br>
+		<div class="col-md-12">
+			<div class="panel panel-default" style="margin-left:70px; margin-right:70px;">
+				<div class="panel-heading">Usuários</div>
+				<div class="panel-body">
+					<div class="row">
+						
+            			<table class="table">
+              				<tr th:each="user : ${users}">
+	                			<td th:text="${user.username}">Nome do usuário</td>  	            			
+             	 			</tr>
+            			</table>
+          			</div> 
+        		</div>
+      		</div>
+    	</div>	
+	
+
 	</div>
-	<div>
 
-		<table>
-			<tr>
-				<td>Username</td>
-				<td>Password</td>
-			</tr>
-			<tr th:each="user : ${users}">
-				<td th:text="${user.username}">Username</td>
-				<td th:text="${user.password}">Password</td>
-			</tr>
 
-		</table>
-
-	</div>
 </body>
 </html>
