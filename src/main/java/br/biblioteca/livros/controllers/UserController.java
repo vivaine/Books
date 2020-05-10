@@ -66,7 +66,7 @@ public class UserController {
 	public ModelAndView listadmin(User user) {
 
 		List<User> users = userService.findAll();
-		return new ModelAndView("/users/listadmin", "users", users);
+		return new ModelAndView("users/listadmin", "users", users);
 	}
 
 	@GetMapping(value = "/registration")
